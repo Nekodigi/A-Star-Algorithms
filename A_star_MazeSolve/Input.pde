@@ -3,8 +3,7 @@ void keyPressed(){
     routeReset();
   }
   if(key=='b'){
-    mazeRebuild();
-    routeReset();
+    reset();
   }
   if(key=='s'){
     heurType++;

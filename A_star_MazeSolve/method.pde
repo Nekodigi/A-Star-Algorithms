@@ -1,5 +1,26 @@
+float heuristic(Spot a, Spot b){
+  switch(heurType){
+    case 0:
+      return (a.i-b.i) * (a.i-b.i) + (a.j-b.j) * (a.j-b.j);
+    case 1:
+      return dist(a.i, a.j, b.i, b.j);
+    case 2:
+      return abs(a.i-b.i) + abs(a.j-b.j);
+    default:
+      return 1;
+  }
+}
+
+void betWallBreak(Spot a, Spot b){
+  a.wall = false;
+  b.wall = false;
+  Spot mid = grid[(a.i+b.i)/2][(a.j+b.j)/2];
+  mid.wall = false;
+  mid.visited = true;
+}
+
 void reset(){
-  mazeRebuild();
+  mazeReset();
   routeReset();
 }
 
@@ -12,25 +33,7 @@ void routeReset(){
   openSet.add(start);
 }
 
-void mazeGen(){
-  genCurrent.visited = true;
-  Spot neighbor = genCurrent.getNeighbor2();
-  if(neighbor != null){
-    genStack.add(neighbor);
-    betWallBreak(genCurrent, neighbor);
-    genCurrent = neighbor;
-  }
-  else if(genStack.size() > 0){
-    genCurrent = genStack.remove(genStack.size()-1);
-  }
-  else{
-    mazeBuilding = false;
-    solving = true;
-    println("GENERATE DONE");
-  }
-}
-
-void mazeRebuild(){
+void mazeReset(){
   mazeBuilding = true;
   for(int i = 0; i < cols; i++){
     for(int j = 0; j < rows; j++){

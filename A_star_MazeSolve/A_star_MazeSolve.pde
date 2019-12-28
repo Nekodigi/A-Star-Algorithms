@@ -1,6 +1,6 @@
 
-int cols = 192;
-int rows = 108;
+int cols = 30;
+int rows = 30;
 float wallRate=0.3;
 
 Spot[][] grid = new Spot[cols][rows];
@@ -22,8 +22,8 @@ Spot start;
 Spot end;
 
 void setup(){
-  //size(400, 400);
-  fullScreen();
+  size(600, 600);
+  //fullScreen();
   colorMode(HSB, 360, 100, 100, 100);
   wid = width/cols;
   hei = height/rows;
@@ -37,13 +37,13 @@ void draw(){
   if(mazeBuilding){
     iter = genIter;
   }
-  for(int n = 0; n < iter; n++){
+  
     if(mazeBuilding){
       mazeGen();
     }else if(solving){
       A_star();
     }
-  }
+  
   
   showAll();
 }
