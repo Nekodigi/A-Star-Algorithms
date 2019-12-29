@@ -11,7 +11,7 @@ ArrayList<Spot> path = new ArrayList<Spot>();
 float wid, hei;
 int heurType = 0;
 int debugMode = 0;
-int iter = 10;
+int iter = 2;
 
 Spot current;
 Spot start;

@@ -21,6 +21,8 @@ void routeReset(){
   closedSet = new ArrayList<Spot>();
   start = grid[0][0];
   end = grid[cols-1][rows-1];
+  start.wall = false;
+  end.wall = false;
   openSet.add(start);
   current = start;
   solving = true;

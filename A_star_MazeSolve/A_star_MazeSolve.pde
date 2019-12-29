@@ -1,6 +1,6 @@
 
-int cols = 30;
-int rows = 30;
+int cols = 60;
+int rows = 60;
 float wallRate=0.3;
 
 Spot[][] grid = new Spot[cols][rows];
@@ -11,8 +11,8 @@ ArrayList<Spot> genStack = new ArrayList<Spot>();
 float wid, hei;
 int heurType = 0;
 int debugMode = 0;
-int genIter = 60;
-int solvIter = 10;
+int genIter = 20;
+int solvIter = 2;
 boolean mazeBuilding = true;
 boolean solving = true;
 

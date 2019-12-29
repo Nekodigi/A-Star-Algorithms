@@ -31,7 +31,7 @@ void A_star(){
         }
       }
       if(current == end){
-        print("DONE");
+        println("DONE");
         solving = false;
         break;
       }
