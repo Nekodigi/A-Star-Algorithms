@@ -32,7 +32,7 @@ void draw(){
     A_star();
   }
   fill(360);
-  stroke(0);
+  noStroke();
   for(int i = 0; i < cols; i++){
     for(int j = 0; j < rows; j++){
       grid[i][j].show(color(360));

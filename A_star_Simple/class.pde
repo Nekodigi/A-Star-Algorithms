@@ -41,7 +41,6 @@ class Spot{
     }else{
       fill(col);
     }
-    stroke(0);
     rect(i*wid, j*hei, wid, hei);
   }
 }
